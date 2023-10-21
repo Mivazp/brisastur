@@ -1,0 +1,538 @@
+/* Parametros */
+    @font-face{
+        font-family: 'Oswald regular';
+        src: url(../fonts/Oswald/static/Oswald-Regular.ttf);
+        font-display: swap;
+    }
+    @font-face{
+        font-family: 'Oswald semibold';
+        src: url(../fonts/Oswald/static/Oswald-SemiBold.ttf);
+        font-display: swap;
+    }
+    @font-face{
+        font-family: 'Montserrat regular';
+        src: url(../fonts/Montserrat/static/Montserrat-Regular.ttf);
+        font-display: swap;
+    }
+    @font-face{
+        font-family: 'Montserrat bold';
+        src: url(../fonts/Montserrat/static/Montserrat-Bold.ttf);
+        font-display: swap;
+    }
+    /* Variables */
+    :root{
+        /* Colores */
+        --color-principal: #233337;
+        --color-secundario: #5e6565;
+        --color-acento: #eedb52;
+        --fondo-formulario: #90aec58a;
+        --text-negro: #040404;
+        --text-blanco: #f0f0f0;
+        --blanco: #ffffff;
+        /* Tipografia */
+        --fuente-titulo-main: 'Oswald semibold', sans-serif;
+        --fuente-cuerpo-main: 'Oswald regular', sans-serif;
+        --fuente-titulo: 'Montserrat bold', sans-serif;
+        --fuente-cuerpo: 'Montserrat regular', sans-serif;
+        /* Tamaños */
+        --size-h1: 30px;
+        --size-h2: 25px;
+        --size-h3: 20px;
+        --size-h4: 19px;
+        --size-cuerpo: 18px;
+        --size-cuerpo-main: 19px;
+        --size-titulo-footer: 15px;
+        /* Estructura */
+        --padding-web: 10%;
+    }
+
+
+/* Normalizadores */
+    *{
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+        /* outline: 2px dashed purple; */
+    }
+    .html{
+        scroll-behavior: smooth;
+    }
+    h1, h2, h3, h4{
+        font-family: var(--fuente-titulo);
+    }
+    h1{
+        font-size: var(--size-h1);
+        color: var(--color-principal);
+    }
+    h2, h5{
+        font-size: var(--size-h2);
+        color: var(--color-acento);
+    }
+    h3{
+        font-size: var(--size-h3);
+        color: var(--color-secundario);
+    }
+    h4{
+        font-size: var(--size-h4);
+        color: var(--color-secundario);
+        margin-bottom: 15px;
+        text-decoration: underline;
+    }
+    h6{
+        font-size: var(--size-titulo-footer);
+        color: var(--color-secundario);
+    }
+    p{
+        font-size: var(--fuente-cuerpo);
+        color: var(--color-secundario);
+        font-size: var(--size-cuerpo);
+    }
+    a{
+        text-decoration: none;
+        font-family: var(--fuente-cuerpo);
+        /* flex */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    button{
+        border: none;
+        background-color: transparent;
+        font-family: var(--fuente-titulo);
+        /*flex*/
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    fieldset{
+        border: none;
+    }
+/* Reglas recursivas */
+    .dNone{
+        display: block !important;
+    }
+    
+/* Reglas generales */
+    /* Marco */
+    .marco{
+        width: 100%;
+        max-width: 1920px;
+        margin: auto;
+    }
+    /* Header */
+    header{
+        width: 100%;
+        height: 85px;
+        padding: 0% var(--padding-web);
+        background-color: var(--color-principal);
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        z-index: 1000;
+        opacity: 0.95;
+        /*flex*/
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .logo img{
+        width: 170px;
+        height: 80px;
+        object-fit: contain;
+        object-position: center;
+    } 
+    /* Menu nav */
+    .nav{
+        display: none;
+    }
+    /* Menu movil */
+    .btnmob{
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+        color: var(--color-acento);
+    }
+    .menuMob{
+        width: 70%;
+        padding: 10px;
+        background-color: var(--color-principal);
+        position: fixed;
+        top: 80px;
+        right: 15px;
+        z-index: 2000;
+        border: solid 1px black;
+        border-top:solid 5px var(--color-acento);
+        opacity: 0.9;
+        margin: auto;
+        display: none;
+    }
+    .menuMob a{
+        color: var(--blanco);
+        justify-content: initial;
+        margin: 15px; 
+    }
+
+    
+    footer{
+        width: 100%;
+        height: 120px;
+        padding: 20px;
+        border-top: 5px solid var(--color-acento);
+        /*flex*/
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .rrssFooter,
+    .contactFooter{
+        width: 50%;
+        height: 100%;
+        list-style: none;
+    }
+    .rrssFooter button{
+        margin: auto;
+        font-size: 25px;
+    }
+    .rrssFooter li{
+        margin-bottom: 10px;
+    }
+    .btnIg{
+        color: #E1306C;
+    }
+    .btnFb{
+        color: #3b5998;
+    }
+    .contactFooter li{
+        margin-top: 5px;
+    }
+
+/* Reglas Especificas */
+    /* Menu 1 */
+    .m1{
+        width: 100%;
+        height: 900px;
+        background-image: url(../img/main-brisastur.jpg);
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+        padding: 230px var(--padding-web) 10px;
+        opacity: 0.75;
+        text-align: center;
+    }
+    .m1 article{
+        width: 100%;
+        background-color:rgba(255, 255, 255, 0.6);
+        border-radius: 10px;
+        padding-bottom: 20px;
+    }
+    .m1 img{
+        width: 100%;
+        background-color: var(--color-principal);
+        opacity: 0.8;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+    }
+    .m1 h1{
+        font-family: var(--fuente-titulo-main);
+        margin: 20px 0px;
+    }
+    .linea::after{
+        content: "";
+        display: block;
+        width: 60px;
+        height: 4px;
+        background-color: var(--color-secundario);
+        margin: 10px auto 0px;
+    }
+    .m1 p{
+        width: 80%;
+        font-family: var(--fuente-cuerpo-main);
+        font-size: var(--size-cuerpo-main);
+        line-height: 1.7;
+        color: var(--color-principal);
+        margin: auto;
+    }
+    /* Section 1 */
+    .s1{
+        width: 100%;
+        height: 900px;
+        padding: 60px var(--padding-web);
+        
+    }
+    .s1 figure{
+        width: 100%;
+        height: 25%;
+        margin-bottom: 10px;
+    }
+    .s1 article{
+        width: 100%;
+        height: 18%;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .s1 img{
+        width: 100%;
+        height: 100%;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+        object-position: center;
+    }
+    .s1 p{
+        margin-top: 10px;
+    }
+    /* Section 2 */
+    .s2{
+        width: 100%;
+        height: 580px;
+        background-color: rgb(198, 203, 203);
+        padding: 60px var(--padding-web);
+    }
+    .main-carousel{
+        width: 100%;
+        height: 100%;
+    }
+    .carousel-cell{
+        width: 100%;
+        height: 100%;
+        margin-bottom: 0px;
+        text-align: center;
+
+    } 
+    .carousel-cell img{
+        width: 100%;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+        object-position: center;
+        margin-bottom: 10px;
+    }
+    .carousel-cell p{
+        margin-top: 20px;
+        line-height: 1.2;
+        
+    }
+    .flickity-page-dots{
+        display: none;
+    }
+    .flickity-button{
+        width: 20px;
+        height: 20px;
+    }
+    /* Section 3 */
+    .s3{
+        width: 100%;
+        height: 720px;
+        background-color: #5e6565;
+        padding: 60px var(--padding-web);
+    }
+    .s3 h4{
+        color: var(--blanco);
+    }
+    .s3 article{
+        width: 100%;
+        height: 32%;
+        margin-bottom: 10px;
+        text-align: center;
+        /*flex*/
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .s3 i{
+        font-size: 70px;
+        margin-bottom: 15px;
+    }
+    .s3 h3{
+        color: var(--color-acento);
+        margin-bottom: 10px;
+    }
+    .s3 p{
+        color: var(--blanco);
+    }
+    .wa i{
+        color: rgb(4, 88, 4);
+    }
+    .direccion i{
+        color: rgb(139, 11, 11);
+    }
+    /* Section 4 */
+    .s4{
+        width: 100%;
+        height: 400px;
+        background-image: url(../img/main-brisastur.jpg);
+        background-position: center;
+        background-size: cover;
+    }
+    .formulario{
+        width: 100%;
+        height: 400px;
+        padding: 50px 30px;
+        background-color: var(--fondo-formulario); 
+        text-align: center;
+        /*flex*/
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .formulario input{
+        width: 80%;
+        height: 25px;
+        padding-left: 5px;
+        margin-top: 5px;
+        margin-bottom: 20px;
+    }
+    .formulario h2{
+        margin-bottom: 20px;
+        font-size: var(--size-h1);
+        line-height: 1.5;
+    }
+    .formulario p{
+        margin-bottom: 20px;
+        color: var(--text-negro);
+        font-size: var(--size-cuerpo-main);
+        font-family: var(--fuente-cuerpo-main);
+    }
+    .formulario button{
+        width: 100%;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        border: 1px solid black;
+        border-radius: 5px;
+    }
+    .btnYell{
+        height: 45px;
+        background-color: var(--color-acento);
+        color: var(--text-negro);
+    }
+    /* Boton subir hacia arriba */
+    .btnArriba i{
+        font-size: 24px;
+        background-color: rgb(234, 233, 233);
+        color: #040404;
+        border-radius: 50%;
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        z-index: 2000;
+    }
+
+    
+/* Responsive */
+@media (min-width: 768px){
+/* Reglas generales */ 
+    /* Header */
+    .logo img{
+        width: 90%;
+        object-fit: contain;
+    }
+   
+/* Reglas Especificas */
+    /* Menu 1 */
+    .m1{
+        height: 850px;
+        padding: 270px var(--padding-web) 10px;
+    }
+    .m1 article{
+        width: 80%;
+        margin: auto;
+    }
+    /* Section 1 */
+    .s1{
+        padding: 50px var(--padding-web);
+    }
+    .s1 figure{
+        height: 30%;
+    }
+    .s1 article{
+        height: 15%;
+    }
+    .s1 img{
+        object-fit: contain;
+    }
+    /* Section 2 */ 
+    .main-carousel{
+        height: 100%;
+    }
+    .carousel-cell{
+        height: 90%;
+    } 
+    .carousel-cell img{
+        height: 75%;
+        object-fit: contain;
+    }
+    /* Section 4 */
+    .formulario input{
+        width: 60%;
+    }
+    .formulario button{
+        width: 50%;
+        margin: auto;
+    }
+    /* Footer */
+    .rrssFooter a{
+        font-size: 30px;
+    }
+}
+
+
+
+
+
+
+
+
+
+@media (min-width: 1280px){
+    /* Reglas generales */
+    /* Header */
+    header{
+        padding: 0% 4%;
+    }
+    /* Menu nav */
+    .nav{
+        width: 60%;
+        /*flex*/
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .nav a{
+        color: var(--color-acento);
+    }
+    /* Menu movil */
+    .btnmob{
+       display: none;
+    }
+    /* Reglas específicas */
+    /* Menu 1 */
+    .m1{
+        height: 850px;
+        padding: 210px var(--padding-web) 10px;
+    }
+    .m1 article{
+        width: 50%;
+    }
+    /* Section 1 */
+    .s1 figure{
+        height: 33%;
+    }
+    .s1 article{
+        height: 10%;
+    }
+    /* Footer */
+    .rrssFooter{
+        /*flex*/
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .rrssFooter li{
+        margin-right: 50px;
+    }
+    .rrssFooter a{
+        font-size: 50px;
+    }
+    .btnArriba i{
+        font-size: 50px;
+    }
+}
